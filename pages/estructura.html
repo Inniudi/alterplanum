@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../src/newLogo-noParticles-overLight.svg" type="image/x-icon">
+    <title>La Brecha</title>
+    <link rel="stylesheet" href="../css/estructura.css" type="text/css">
+</head>
+
+<body>
+    <div id="headerLogo"></div>
+    <div class="navbar">
+        <a href="#" onclick="goToPart(0, undefined)" class="navbarLink currentNavbarLink" id="PARTE0link">PRÓLOGO</a>
+        <a href="#" onclick="goToPart(1, undefined)" class="navbarLink hidden" id="PARTE1link">PARTE 1</a>
+        <a href="#" onclick="goToPart(2, undefined)" class="navbarLink hidden" id="PARTE2link">PARTE 2</a>
+        <a href="#" onclick="goToPart(3, undefined)" class="navbarLink hidden" id="PARTE3link">PARTE 3</a>
+        <a href="#" onclick="goToPart(4, undefined)" class="navbarLink hidden" id="PARTE4link">PARTE 4</a>
+        <a href="#" onclick="goToPart(5, undefined)" class="navbarLink hidden" id="PARTE5link">PARTE 5</a>
+    </div>
+    <div class="container currentPart" id="PARTE0container">
+        <div class="card" id="zorroCard" onclick="openModal('modalZorro');">
+            <img src="../src/zorro.png" class="cardImg" id="zorroCardImg">
+            <div class="cardText">Prólogo</div>
+        </div>
+        <div class="modal hidden" id="modalZorro">
+            <button onclick="closeModal(this)" class="closeBttn">╳</button>
+            <div class="modal-content">
+                Micrometraje que muestra a ABEL (23) emergiendo en el Alterplanum. En nuestro mundo, un zorro se acerca
+                a unas partículas alteradas, que producen una pequeña
+                brecha. Voice Over de Abel.
+                <img src="../src/conceptZorro.png" width="70%" style="margin: 30px;" alt="">
+                <p style="font-size: 10pt; font-weight: 100;">(Esto es un intento chungo de recrear la escena)</p>
+                <button class="button" onclick="goToPart(1, 'modalZorro')">Entrar a la brecha</button>
+            </div>
+        </div>
+    </div>
+    <div class="container hidden" id="PARTE1container">
+        <div class="card" id="gameCard" onclick="openModal('modalJuego')">
+            <img src="../src/consola.png" class="cardImg" id="gameCardImg">
+            <div class="cardText">Juego</div>
+        </div>
+        <div class="card" id="folderCard" onclick="openModal('modalFolder')">
+            <img src="../src/file-and-folder.png" class="cardImg" id="folderCardImg">
+            <div class="cardText">Carpeta virtual</div>
+            <img src="../src/candado.png" alt="lock" class="locked">
+        </div>
+        <div class="card" id="mapCard" onclick="openModal('modalMapa')">
+            <img src="../src/mapa.png" class="cardImg" id="mapCardImg">
+            <div class="cardText">Mapa</div>
+        </div>
+        <div class="card" id="idCard" onclick="openModal('modalTarjeta')">
+            <img src="../src/tarjeta-de-identificacion.png" class="cardImg" id="idCardImg">
+            <div class="cardText">Tarjeta de identificación</div>
+        </div>
+        <div class="card" id="legendCard" onclick="openModal('modalLeyenda')">
+            <img src="../src/espada.png" class="cardImg" id="legendCardImg">
+            <div class="cardText">Leyenda</div>
+            <img src="../src/candado.png" alt="lock" class="locked">
+        </div>
+        <div class="modal hidden" id="modalJuego">
+            <button onclick="closeModal(this)" class="closeBttn">╳</button>
+            <div class="modal-content">
+                Aventura gráfica en la que ORIOL (36), un obrero del Sector Azul del Alterplanum, descubre la brecha
+                mientras trabaja y decide infiltrarse en el Sector Superior.
+                Contiene la contraseña de la Carpeta virtual y un indicio para resolver el puzzle del mapa.
+            </div>
+        </div>
+        <div class="modal hidden" id="modalFolder">
+            <button onclick="closeModal(this)" class="closeBttn">╳</button>
+            <div class="modal-content">
+                Web que contiene archivos de texto: literatura "académica" con información sobre teoría cuántica (más o
+                menos) y otro lore del universo.
+                Bloqueado con contraseña: para desbloquearla es necesario un usuario (presente en la tarjeta de
+                identificación) y una contraseña (presente dentro del juego).
+            </div>
+        </div>
+        <div class="modal hidden" id="modalMapa">
+            <button onclick="closeModal(this)" class="closeBttn">╳</button>
+            <div class="modal-content">
+                Imagen digital o impresa con varios planos de los distintos sectores del Alterplanum. Contiene un puzzle
+                para descubrir la combinación de la entrada al Sector Superior, que
+                bloquea la Leyenda.
+            </div>
+        </div>
+        <div class="modal hidden" id="modalTarjeta">
+            <button onclick="closeModal(this)" class="closeBttn">╳</button>
+            <div class="modal-content">
+                Imagen digital o impresa con información de usuario de Oriol.
+            </div>
+        </div>
+        <div class="modal hidden" id="modalLeyenda">
+            <button onclick="closeModal(this)" class="closeBttn">╳</button>
+            <div class="modal-content">
+                Cómic digital (incluido en el programa de la aventura gráfica) con aspecto visual de mural arcaico en el
+                que se muestra la leyenda y la profecía de la
+                brecha. Bloqueado con un código que se obtiene al resolver el puzzle del mapa (entrar al Sector
+                Superior).
+                <button class="button" onclick="goToPart(2, 'modalLeyenda')">Continuar la aventura (abrir web)</button>
+            </div>
+        </div>
+    </div>
+    <div class="container hidden" id="PARTE2container">
+        <div class="card" id="webCard" onclick="openModal('modalWeb')">
+            <img src="../src/internet.png" class="cardImg" id="webCardImg">
+            <div class="cardText">Web</div>
+        </div>
+        <div class="card" id="gameCard" onclick="openModal('modalJuego2')">
+            <img src="../src/consola.png" class="cardImg" id="gameCardImg">
+            <div class="cardText">Juego <br /> (Abel + Canor)</div>
+        </div>
+        <div class="card" id="recuerdosCard" onclick="openModal('modalRecuerdos')">
+            <img src="../src/pensando.png" class="cardImg" id="recuerdosCardImg">
+            <div class="cardText">Repositorio de <br /> recuerdos</div>
+            <img src="../src/candado.png" alt="lock" class="locked">
+        </div>
+        <div class="card" id="redesCard" onclick="openModal('modalRedes')">
+            <img src="../src/medios-de-comunicacion-social.png" class="cardImg" id="redesCardImg">
+            <div class="cardText">Perfil de red <br /> social de Canor</div>
+        </div>
+        <div class="card" id="encuentroCard" onclick="openModal('modalEncuentro')">
+            <img src="../src/localizacion.png" class="cardImg" id="encuentroCardImg">
+            <div class="cardText">Encuentro</div>
+            <img src="../src/candado.png" alt="lock" class="locked">
+        </div>
+        <div class="modal hidden" id="modalWeb">
+            <button onclick="closeModal(this)" class="closeBttn">╳</button>
+            <div class="modal-content">
+                Web con información sobre Abel y CANOR (21), los héroes.
+            </div>
+        </div>
+        <div class="modal hidden" id="modalJuego2">
+            <button onclick="closeModal(this)" class="closeBttn">╳</button>
+            <div class="modal-content">
+                Continuación de la aventura gráfica, esta vez con la posibilidad de alternar entre Abel y Canor.
+                <br />Parte de Abel: comienza su vida en el Alterplanum; es llevado ante los Sabios para encomendarle su
+                misión como héroe; se le administran los recuerdos de su pasado; marcha al mundo de los vivos en busca
+                de Canor.
+                <br />Parte de Canor: se observan sus problemas diarios: ideas suicidas y relaciones con sus familiares
+                y amigos.
+                <br />Ambas partes confluyen en el momento en el que los dos personajes se encuentran.
+            </div>
+        </div>
+        <div class="modal hidden" id="modalRecuerdos">
+            <button onclick="closeModal(this)" class="closeBttn">╳</button>
+            <div class="modal-content">
+                Repositorio digital con micrometrajes que representan los recuerdos de Abel.
+                <br />Bloqueado con una contraseña que se obtiene dentro de la parte de Abel de la aventura gráfica.
+            </div>
+        </div>
+        <div class="modal hidden" id="modalRedes">
+            <button onclick="closeModal(this)" class="closeBttn">╳</button>
+            <div class="modal-content">
+                Perfil en una red social de Canor. Será necesario consultarlo para avanzar en su parte de la aventura
+                gráfica.
+            </div>
+        </div>
+        <div class="modal hidden" id="modalEncuentro">
+            <button onclick="closeModal(this)" class="closeBttn">╳</button>
+            <div class="modal-content">
+                Micrometraje que muestra el encuentro de Abel y Canor. Voice Over de Abel.
+                <br />Bloqueado hasta que las partes de la aventura gráfica confluyen.
+                <button class="button" onclick="goToPart(3, 'modalEncuentro')">Continuar la aventura</button>
+            </div>
+        </div>
+    </div>
+    <div class="container hidden" id="PARTE3container">
+        <div class="card" id="folderCard" onclick="openModal('modalFolder2')">
+            <img src="../src/file-and-folder.png" class="cardImg" id="folderCardImg">
+            <div class="cardText">Carpeta virtual</div>
+        </div>
+        <div class="card" id="diaryCard" onclick="openModal('modalDiario')">
+            <img src="../src/diario.png" class="cardImg" id="diaryCardImg">
+            <div class="cardText">Diario</div>
+            <img src="../src/candado.png" alt="lock" class="locked">
+        </div>
+        <div class="card" id="gameCard" onclick="openModal('modalJuego3')">
+            <img src="../src/consola.png" class="cardImg" id="gameCardImg">
+            <div class="cardText">Juego <br /> (Oriol)</div>
+        </div>
+        <div class="modal hidden" id="modalJuego3">
+            <button onclick="closeModal(this)" class="closeBttn">╳</button>
+            <div class="modal-content">
+                Continuación de la aventura gráfica, esta vez de vuelta a la focalización de Oriol.
+                <br />Al haberse infiltrado en el Sector Superior, Oriol inspecciona información confidencial.
+                <br />El jugador debe acudir al lugar de la ceremonia a la hora indicada en el diario.
+                <button class="button" onclick="goToPart(4, 'modalJuego3')">Dar información a escondidas a los
+                    héroes a cambio de ayuda para huir del Alterplanum</button>
+            </div>
+        </div>
+        <div class="modal hidden" id="modalFolder2">
+            <button onclick="closeModal(this)" class="closeBttn">╳</button>
+            <div class="modal-content">
+                Misma carpeta virtual de la Parte 1, ya desbloqueada. Se pueden añadir nuevos documentos confidenciales
+                con códigos que se obtienen en la aventura gráfica. En ellos se da más información sobre la brecha.
+            </div>
+        </div>
+        <div class="modal hidden" id="modalDiario">
+            <button onclick="closeModal(this)" class="closeBttn">╳</button>
+            <div class="modal-content">
+                Diario de Oriol, en el que describe sus indagaciones y cómo descubre que los verdaderos culpables de la
+                brecha son los Sabios. <br />
+                Se desbloquea al añadir todos los documentos confidenciales nuevos a la carpeta virtual (se abre un pdf
+                con el diario). <br />
+                En el texto aparece la fecha y hora de la ceremonia de los héroes, en la que Abel y Canor reciben su
+                poder.
+            </div>
+        </div>
+    </div>
+    <div class="container hidden" id="PARTE4container">
+        <div class="card" id="redesCard2" onclick="openModal('modalRedes2')">
+            <img src="../src/medios-de-comunicacion-social.png" class="cardImg" id="redesCardImg">
+            <div class="cardText">Feed de red social</div>
+        </div>
+        <div class="card" id="gameCard" onclick="openModal('modalJuego4')">
+            <img src="../src/consola.png" class="cardImg" id="gameCardImg">
+            <div class="cardText">Juego<br />(Canor)</div>
+        </div>
+        <div class="modal hidden" id="modalJuego4">
+            <button onclick="closeModal(this)" class="closeBttn">╳</button>
+            <div class="modal-content">
+                Continuación de la aventura gráfica, esta vez centrada en Canor.<br />
+                Canor viaja al Alterplanum para enfrentarse en solitario a los Sabios, pero finalmente es
+                capturado. <br />
+                Cutscene (cortometraje pero al no estar separado del videojuego supongo que se consideraría cutscene) de
+                Oriol descubriendo que Canor ha sido capturado, siendo descubierto por los guardias del Sector Superior
+                y huyendo para hablar con Abel antes de que lo capturen a él también.
+                <button class="button" onclick="goToPart(5, 'modalJuego4')">Decir a Abel que los Sabios han capturado a
+                    Canor</button>
+            </div>
+        </div>
+        <div class="modal hidden" id="modalRedes2">
+            <button onclick="closeModal(this)" class="closeBttn">╳</button>
+            <div class="modal-content">
+                Conjunto de publicaciones de red social en las que aparecen fenómenos derivados de la brecha vividos por
+                ciudadanos, como avistamientos de la brecha, fuerzas especiales investigando, bulos...
+            </div>
+        </div>
+    </div>
+    <div class="container hidden" id="PARTE5container">
+        <div class="card" id="carcelCard" onclick="openModal('modalCarcel')">
+            <img src="../src/carcel.png" class="cardImg" id="carcelCardImg">
+            <div class="cardText">Informe de detención</div>
+        </div>
+        <div class="card" id="redesCard2" onclick="openModal('modalRedes3')">
+            <img src="../src/medios-de-comunicacion-social.png" class="cardImg" id="redesCardImg">
+            <div class="cardText">Feed de red social</div>
+        </div>
+        <div class="card" id="newsCard" onclick="openModal('modalNoticias')">
+            <img src="../src/noticias.png" class="cardImg" id="newsCardImg">
+            <div class="cardText">Noticia</div>
+        </div>
+        <div class="card" id="gameCard" onclick="openModal('modalJuego5')">
+            <img src="../src/consola.png" class="cardImg" id="gameCardImg">
+            <div class="cardText">Juego<br />(Abel)</div>
+        </div>
+        <div class="modal hidden" id="modalCarcel">
+            <button onclick="closeModal(this)" class="closeBttn">╳</button>
+            <div class="modal-content">
+                Documento que recoge la detención y condena máxima para Oriol por haber traicionado al Alterplanum y
+                haber interferido en la misión de los héroes.
+            </div>
+        </div>
+        <div class="modal hidden" id="modalRedes3">
+            <button onclick="closeModal(this)" class="closeBttn">╳</button>
+            <div class="modal-content">
+                Conjunto de publicaciones de red social en las que se ve cómo la brecha empieza a arrasar la ciudad. La
+                gente se encuentra con sus fallecidos. Los científicos están anonadados.
+            </div>
+        </div>
+        <div class="modal hidden" id="modalNoticias">
+            <button onclick="closeModal(this)" class="closeBttn">╳</button>
+            <div class="modal-content">
+                Artículo de prensa informando sobre la catástrofe y cómo se está gestionando. Se accede a ella mediante
+                un enlace del feed de red social.
+            </div>
+        </div>
+        <div class="modal hidden" id="modalJuego5">
+            <button onclick="closeModal(this)" class="closeBttn">╳</button>
+            <div class="modal-content">
+                Continuación de la aventura gráfica, esta vez centrada en Abel.<br />
+                Abel viaja al Sector Superior, derrota a los sabios, libera a Canor y ambos cierran la brecha. <br />
+                Cutscene (de nuevo cortometraje pero no está separado del juego) del cierre de la brecha y despedida de
+                los héroes.
+                <button class="button" onclick="closeModal(this.parentElement)">Fin de la aventura</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/estructura-manager.js"></script>
+</body>

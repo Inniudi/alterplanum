@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../src/newLogo-noParticles-overLight.svg" type="image/x-icon">
+    <title>La Brecha</title>
+    <link rel="stylesheet" href="../css/page.css" type="text/css">
+    <link rel="stylesheet" href="../css/fonts.css" type="text/css">
+    <link rel="stylesheet" href="../css/part1.css" type="text/css">
+</head>
+
+<body>
+    <div id="part-container">
+        <div class="block" id="juego" onclick="openPage('game_placeholder.html')">
+            <img src="../src/element.png" width=120 id="GameBlockImg">
+        </div>
+        <div class="block" id="carpeta" onclick="openPage('carpeta_virtual.html')">
+            <img src="../src/element.png" width=120 id="FolderBlockImg">
+        </div>
+        <div class="block" id="mapa" onclick="openPage('../src/MAP-B.png')">
+            <img src="../src/element.png" width=120 id="MapBlockImg">
+        </div>
+        <div class="block" id="tarjeta" onclick="openPage('../src/id-card-oriol.png')">
+            <img src="../src/element.png" width=120 id="IDBlockImg">
+        </div>
+    </div>
+
+    <script>
+        function openPage(url)
+        {
+            window.open(url, '_blank').focus();
+        }
+    </script>
+</body>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../src/carpeta_logo.png" type="image/x-icon">
+    <title>Carpeta Virtual</title>
+    <link rel="stylesheet" href="../css/page.css" type="text/css">
+    <link rel="stylesheet" href="../css/fonts.css" type="text/css">
+    <link rel="stylesheet" href="../css/carpeta_virtual.css" type="text/css">
+</head>
+
+<body>
+    <div id="header">
+        <div id="logo_container">
+            <img id="logo" src="../src/carpeta_logo.png" alt="">
+            <p>CARPETA VIRTUAL</p>
+        </div>
+        <div id="user">
+            <img id="search" src="../src/addsearch.png">
+        </div>
+    </div>
+
+    <div id="folder_content">
+        <div id="docs">
+            <div class="document" onclick="openDoc(0)">
+                <img class="doc_img" src="../src/doc.png">
+                <a>Alterplanum</a>
+            </div>
+            <div class="document" onclick="openDoc(1)">
+                <img class="doc_img" src="../src/doc.png">
+                <a>Mar entrópico</a>
+            </div>
+            <div class="document" onclick="openDoc(2)">
+                <img class="doc_img" src="../src/doc.png">
+                <a>Sectores</a>
+            </div>
+            <div class="document" onclick="openDoc(3)">
+                <img class="doc_img" src="../src/doc.png">
+                <a>La ciudad</a>
+            </div>
+            <div class="document" onclick="openDoc(4)">
+                <img class="doc_img" src="../src/doc.png">
+                <a>Transplanados</a>
+            </div>
+            <div class="document" onclick="openDoc(5)">
+                <img class="doc_img" src="../src/doc.png">
+                <a>Investigación personal</a>
+            </div>
+        </div>
+        <div id="preview">
+            <div id="paper">
+                <div id="text">
+                    Clica sobre un documento para abrirlo.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="login">
+        <div id="login_panel">
+            <img id="logo" src="../src/carpeta_logo.png" alt="">
+            <h3>INICIAR SESIÓN</h3>
+            <p>Usuario</p>
+            <input type="text" name="Usuario" id="userInput">
+            <p>Contraseña</p>
+            <input type="password" name="Contraseña" id="passwordInput">
+            <div id="error">Usuario o contraseña incorrecto/a</div>
+            <button onclick="check_credentials()">Entrar</button>
+        </div>
+    </div>
+
+    <script>
+        let text = document.getElementById("text");
+        let dict = {
+            "0": "<h3>Alterplanum</h3>Voz latinizada de «otro plano», término asignado al lado opuesto al mundo de los vivos, en el que habitan los transplanados, o personas que dejan de vivir en el Plano Original.</br ></br>Según la mecánica cuántica, un sistema físico puede existir en dos estados al mismo tiempo, lo que equivale a decir que permanece en un estado de superposición cuántica. Esta teoría fue planteada por el científico Erwin Schrödinger en 1935 (calendario del Plano Original) y fue confirmada por los investigadores transplanados mucho tiempo antes, ya que la existencia del Alterplanum se basa completamente en este fenómeno. Para exponerlo de forma más sencilla, se puede decir que algo puede encontrarse en dos planos diferentes de forma simultánea. Los vivos ven uno de ellos, mientras que los transplanados ven el otro. Esto se debe al Efecto de Observación: cuando la conciencia materializa la energía dependiendo de cómo observa la realidad. Por lo tanto, un ente consciente es capaz de contemplar la realidad de una manera determinada, mientras que el subconsciente permanece inalterado en ambos planos. Se podría decir que el subconsciente es el nexo de unión más fuerte entre el Alterplanum y el Plano Original.",
+            "1": "<h3>Mar entrópico</h3>El Alterplanum y el Plano Original comparten partículas, aunque estas existen en dos estados simultáneamente. Esto quiere decir que si una partícula se mueve, lo hace en ambos planos. El mar entrópico es el resultado de los movimientos de las partículas en el Plano Original, que se puede observar en lo que, para los transplanados, es el cielo. Este efecto se caracteriza por la distorsión de las partículas de lo que ellos identifican como nubes (ya que realmente no están formadas por H2O) del Alterplanum de forma caótica. El mismo efecto se produce en el Plano Original, cuando las partículas del Alterplanum se mueven, solo que los vivos no pueden verlo, ya que para ellos ocurre a kilómetros de profundidad bajo tierra.",
+            "2": "<h3>Sectores</h3>Cada una de las divisiones del Alterplanum, separadas según la función de sus transplanados. Existen cinco sectores principales, aunque se dice que hay uno adicional, cuya existencia no ha sido recogida aún. <li>Sector Superior: asociado a la luz invisible, aquí es donde se ubica el Consejo Superior de Sabios, cuyos miembros velan por la seguridad y gobernabilidad del Alterplanum.Este consejo está compuesto por cinco transplanados de edad avanzada, debido a su nivel de experiencia y sabiduría. <li>Sector Azul: área en la que conviven los científicos e investigadores del Alterplanum.Ellos garantizan la actualidad de los conocimientos sobre mecánica cuántica y demás ciencias avanzadas.<li>Sector Verde: en él habitan obreros de clase superior, especialistas en mecánica, arquitectura, logística e infraestructuras.Estos ingenieros aseguran los suministros de víveres, materiales y energía necesarios para el correcto funcionamiento del Alterplanum.<li>Sector Rojo: aquí trabajan la mayoría de habitantes del Alterplanum, obreros de nivel inferior que acatan las tareas menores.Entre ellas destacan: el análisis del mar entrópico, construcción, limpieza, órden público, fabricación de vestimentas y extracción de materiales.<li>Sector Blanco: en él se llevan a cabo labores de cuidado y educación.Contiene enfermerías y escuelas en las que se enseña a realizar las ocupaciones del resto de sectores, además de refugios para los transplanados más jóvenes, incapaces de realizar tareas básicas.",
+            "3": "<h3>La ciudad</h3>Todos los sectores que conforman el Alterplanum están construídos en un mismo núcleo urbanístico, colocados a una altura dada por su nivel: desde el Sector Blanco, localizado en el subsuelo, hasta el Sector Superior, el más cercano al mar entrópico. Este enorme espacio, destinado a acoger a todos los transplanados, se encuentra geográficamente delimitado por dos ríos, llamados Lete y Mnemósine en honor a la tradición mitológica griega, ya que los propósitos de sus “aguas” (realmente no se trata de H2O) son retirar los recuerdos de los transplanados que entran al Alterplanum y restaurarlos, respectivamente.</br ></br><img src='../src/SECTORES.png' height='350'>",
+            "4": "<h3>Transplanados</h3>Nombre que reciben los entes que dejan de vivir en el Plano Original, lo que los vivos conocen como muertos. Su existencia no es más que la energía que queda de ellos al expirar, canalizada hacia el Alterplanum. La conciencia es el factor que provoca que los transplanados observen el otro plano de la realidad, lo que causa su materialización. Consecuentemente, a más conciencia, más corporeizado pasa a estar el ente. Los animales tienen un nivel de conciencia mucho menor al de los humanos, por lo que pasan a ser sujetos casi incorpóreos que vagan por las afueras de la ciudad. La energía no desaparece, sino que se transforma, por lo que, cuando los transplanados ejercen una fuerza, se consumen. Esto hace que los transplanados no sean eternos.",
+            "5": "<h3>Investigación personal</h3>Mi nombre es Oriol, transplanado del Sector Azul. Durante mi carrera científica, he teorizado acerca de la materialización de la energía, llegando a proponer lo que he denominado Efecto Catalizador, un fenómeno cuyas bases se asientan en la física del Alterplanum. Básicamente, lo que defiendo es que, ya que los entes conscientes pueden observar la realidad y, de esta manera, materializarla, es concebible que los vivos puedan materializar el estado de las partículas que nosotros vemos en el Alterplanum, y al contrario: los transplanados pueden materializar el estado de las partículas del Plano Original. Dicho de un modo más sencillo: es teóricamente posible ver el estado de la realidad que no nos corresponde. Si nuestros pensamientos son energía, ¿qué nos impide materializarlos? Es solo una teoría, pero… ¿Qué pasaría si un gran poder provocara este efecto? ¿Por ejemplo, un gran número de personas compartiendo una misma creencia?"
+        };
+
+        function openDoc(index)
+        {
+            console.log("hey");
+            text.innerHTML = dict[index];
+        }
+
+        function check_credentials()
+        {
+            document.getElementById("error").style = "display: none;";
+            setTimeout(check, 500);
+        }
+
+        function check()
+        {
+            if (document.getElementById("userInput").value == "5937812" && document.getElementById("passwordInput").value == "contraseña")
+            {
+                document.getElementById("login").style = "display: none;";
+            }
+            else
+            {
+                document.getElementById("error").style = "display: block";
+            }
+        }
+    </script>
+</body>
