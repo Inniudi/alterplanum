@@ -1,0 +1,18 @@
+@font-face {
+    font-family: "Lexend";
+    src: url("../fonts/Lexend-VariableFont_wght.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Courier Prime Sans";
+    src: url("../fonts/Courier\ Prime\ Sans.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Courier Prime Sans";
+    src: url("../fonts/Courier\ Prime\ Sans\ Bold.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+}

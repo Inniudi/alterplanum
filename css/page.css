@@ -1,0 +1,100 @@
+:root {
+    background-image: url(../src/background.png);
+    background-size: auto;
+    background-repeat: no-repeat;
+}
+
+body {
+    margin: 0%;
+    width: 100%;
+    height: 100%;
+}
+
+body>div,
+body>button {
+    font-family: "Lexend";
+    color: white;
+}
+
+#viewport {
+    width: 100vw;
+    height: 100vh;
+    margin: 0%;
+    padding: 0%;
+    overflow: hidden;
+}
+
+#container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50vw;
+    height: 100%;
+    overflow-y: scroll;
+    direction: rtl;
+}
+
+#content {
+    margin: 5vw;
+    direction: ltr;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background-color: #ffffff2f;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgba(245, 245, 245, 0.473);
+    border-radius: 10px;
+    border: 2px solid #0000;
+    transition: .2s;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #0ed4a9;
+}
+
+.background-img {
+    height: 100%;
+    position: absolute;
+    right: 0;
+    z-index: -1;
+}
+
+.img-mask {
+    z-index: -1;
+    -webkit-mask-image: linear-gradient(90deg, #0000 20%, #ffff 80%);
+    mask-image: linear-gradient(90deg, #0000 40%, #ffff 80%);
+    height: 100%;
+    width: 100%;
+}
+
+.button {
+    padding: 20px;
+    color: white;
+    background-color: #1f7a73;
+    border: none;
+    border-radius: 360px;
+    font-family: "Lexend";
+    margin: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    transition: .3s;
+}
+
+.button:hover {
+    background-color: #0ed4a9;
+}
+
+h3 {
+    color: #1f7a73;
+}

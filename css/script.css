@@ -1,0 +1,78 @@
+:root {
+    --paperWidth: 6in;
+    --paperMarginLeft: 2vw;
+    --paperMarginRight: 2vw;
+    --paperMarginTop: .2in;
+
+    --characterToMarginLeft: 2.2in;
+    --parentheticalToMarginLeft: 1.6in;
+    --dialogToMarginLeft: 1in;
+
+    --font: "Courier Prime Sans";
+    --boldHeadings: bold;
+    --boldCharacters: bold;
+    --boldTransitions: bold;
+    --sceneNumbers: inline-block;
+    --headingHighlight: rgba(61, 241, 217, 0.199);
+    counter-reset: --headings;
+}
+
+.guion {
+    color: white;
+    font-family: var(--font);
+    width: calc(100% - var(--paperMarginLeft) - var(--paperMarginRight));
+    margin-left: var(--paperMarginLeft);
+    margin-right: var(--paperMarginRight);
+    margin-top: var(--paperMarginTop);
+}
+
+[fntype] {
+    color: white;
+    font-family: var(--font);
+    font-size: 12pt;
+}
+
+[fntype="SCENE_HEADING"] {
+    font-weight: var(--boldHeadings);
+    position: relative;
+    background-color: var(--headingHighlight);
+    margin: 6px -10px -6px -10px;
+    padding: 6px 10px 6px 10px;
+}
+
+[fntype="SCENE_HEADING"]::before {
+    position: absolute;
+    display: var(--sceneNumbers);
+    counter-increment: --headings;
+    content: counter(--headings);
+    color: var(--pagebreak-text-color);
+    left: -20px;
+    text-align: right;
+}
+
+[fntype="ACTION"] {
+    margin-left: 0;
+}
+
+[fntype="CHARACTER"] {
+    font-weight: var(--boldCharacters);
+    margin-left: var(--characterToMarginLeft);
+}
+
+[fntype="PARENTHETICAL"] {
+    margin-left: var(--parentheticalToMarginLeft);
+}
+
+[fntype="DIALOG"] {
+    margin-left: var(--dialogToMarginLeft);
+    margin-right: var(--dialogToMarginLeft);
+}
+
+[fntype="TRANSITION"] {
+    font-weight: var(--boldTransitions);
+    text-align: right;
+}
+
+[fntype="CENTERED"] {
+    text-align: center;
+}
