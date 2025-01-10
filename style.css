@@ -1,0 +1,108 @@
+@font-face {
+    font-family: "Lexend";
+    src: url("fonts/Lexend-VariableFont_wght.ttf") format("truetype");
+}
+
+:root {
+    background-image: url(src/background.png);
+    background-size: auto;
+    background-repeat: no-repeat;
+}
+
+body>div,
+body>button {
+    font-family: "Lexend";
+}
+
+#main-div {
+    margin: auto;
+    margin-left: 10vw;
+    margin-top: 20vh;
+    margin-bottom: 20vh;
+    width: 35%;
+    height: 60vh;
+}
+
+#buttons {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.button {
+    height: 6vh;
+    margin: 1vh;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    font-family: "Lexend";
+    background-color: #1a6958;
+    border: none;
+    border-radius: 250px;
+    transition: .2s;
+    color: white;
+}
+
+.button:hover {
+    background-color: #0ed4a9;
+    margin-left: 9vw;
+    margin-right: 9vw;
+    color: white;
+}
+
+.button-credits {
+    height: 6vh;
+    margin: 1vh;
+    margin-left: 12vw;
+    margin-right: 12vw;
+    font-family: "Lexend";
+    background-color: #0000;
+    border: 2px solid whitesmoke;
+    border-radius: 250px;
+    transition: .2s;
+    color: white;
+}
+
+.button-credits:hover {
+    border-color: #0ed4a9;
+    margin-left: 11vw;
+    margin-right: 11vw;
+    color: white;
+}
+
+#headerLogo {
+    background-image: url(src/newLogo-overDark.svg);
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 40%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+#autor {
+    margin: 3vw;
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: "Lexend";
+    font-size: medium;
+    font-weight: 200;
+    color: white;
+    text-align: center;
+}
+
+#info {
+    color: antiquewhite;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 1.5vw;
+}
+
+#pose {
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+}
