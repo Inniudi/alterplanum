@@ -15,6 +15,7 @@
     position: absolute;
     bottom: 20px;
     text-align: center;
+    background-color: #082325b6;
 }
 
 #buttoncontainer {
@@ -37,3 +38,4 @@
     width: 30vw;
 
 }
+
