@@ -1,0 +1,39 @@
+#photocontainer {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: black;
+    display: flex;
+    overflow: hidden;
+}
+
+.photo {
+    width: 100%;
+}
+
+.context {
+    width: 50%;
+    position: absolute;
+    bottom: 20px;
+    text-align: center;
+}
+
+#buttoncontainer {
+    position: absolute;
+    bottom: 10px;
+    margin: auto;
+    margin-left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+#logocontainer {
+    position: absolute;
+    top: 10vh;
+    margin: auto;
+    margin-left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+#logocontainer>img {
+    width: 30vw;
+}
